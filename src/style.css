@@ -1,0 +1,82 @@
+body {
+  font-family: "Calibri";
+  color: white;
+  background-color: rgb(33, 33, 33);
+  font-size: 1.3em;
+}
+
+.button {
+  cursor: pointer;
+  border: 1px solid white;
+  border-radius: 0.2em;
+  font-size: inherit;
+  color: inherit;
+  background-color: rgb(55, 55, 55);
+  padding: 0 0.5em 0.1em 0.5em;
+  margin: 0.2em;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row
+}
+
+.flexing {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: fit-content;
+}
+
+/*
+  Hide the actual buttons to let the labels become the buttons
+*/
+.hidden-element {
+  display: none;
+}
+
+.arrow-svg {
+  width: 1em;
+  height: 1em;
+  filter: invert(100%);
+}
+
+/*
+  Songrelated CSS from here on
+*/
+.js-song__part-name--invisible {
+  display: none;
+}
+
+.js-song__part-name--visible {
+  display: block;
+}
+
+.js-song__part-container {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.song-text-no-line-height {
+  line-height: 0em;
+}
+
+/* 
+  Furigana/Ruby-style text 
+  c-b = chord-block 
+*/
+c-b::before {
+  content: attr(t);
+  display: block;
+  text-align: start;
+  line-height: 1;
+  padding-top: 10px;
+}
+
+c-b {
+  display: inline-block;
+  text-indent: 0px;
+  /*-webkit-text-emphasis: none;*/
+  text-align: start;
+  line-height: 1;
+}

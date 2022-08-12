@@ -1,0 +1,72 @@
+body {
+  font-family: "Verdana";
+}
+
+table {
+  border-spacing: 0px;
+  border-color: black;
+}
+
+sup {
+  font-size: 80%;
+}
+
+div.line {
+  overflow: hidden;
+}
+
+div.block {
+  float: left;
+}
+
+div.note {
+  line-height: 80%;
+}
+
+div.text {}
+
+.st1 {
+  font-family: "Verdana";
+}
+
+.st2 {
+  font-family: "Arial";
+}
+
+.st3 {
+  font-family: "Times New Roman";
+}
+
+.st4 {
+  font-family: "Courier New";
+}
+
+.st5 {
+  font-family: "Lucida Console";
+}
+
+.hide {
+  display: none;
+}
+
+/* This will apply the CSS to an id
+#test1 {
+  font-family: "Verdana";
+}
+
+#test2 {
+  font-family: "Arial";
+}
+
+#test3 {
+  font-family: "Times New Roman";
+}
+
+#test4 {
+  font-family: "Courier New";
+}
+
+#test5 {
+  font-family: "Lucida Console";
+}
+*/
