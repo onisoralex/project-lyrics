@@ -1,9 +1,9 @@
-import * as Utils from "./Utilities/Utils.js";
-import { parseSongFromText } from "./LyricsParsing/LyricsParsing.js";
-import { createText } from "./Display/Transformer.js";
-import * as Import from "./ImportExport/DBImport.js";
-import * as Export from "./ImportExport/DBExport.js";
-import * as FileLoader from "./Utilities/FileLoader.js";
+import * as Utils from "./src/Utilities/Utils.js";
+import { parseSongFromText } from "./src/LyricsParsing/LyricsParsing.js";
+import { createText } from "./src/Display/Transformer.js";
+import * as Import from "./src/ImportExport/DBImport.js";
+import * as Export from "./src/ImportExport/DBExport.js";
+import * as FileLoader from "./src/Utilities/FileLoader.js";
 
 window.openAndDisplayFile = Utils.openAndDisplayFile;
 window.parseSongFromText = parseSongFromText;
