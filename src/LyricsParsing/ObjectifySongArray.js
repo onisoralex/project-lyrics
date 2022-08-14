@@ -40,8 +40,9 @@ const getSongPartFromParsedText = (songArrayPart) => {
   const o = {};
 
   o.name = songArrayPart.name;
+  o.type = songArrayPart.type;
   o.lyrics = songArrayPart.lyrics;
-  o.codedChords = copyChordsOfPart(songArrayPart.transformedChords.codedChords);
+  o.codedChords = (o.type === "lyrics") ? songArrayPart.codedChords : copyChordsOfPart(songArrayPart.transformedChords.codedChords);
 
   return o;
 };
@@ -50,6 +51,7 @@ const getSongPartFromImportedText = (songArrayPart) => {
   const o = {};
 
   o.name = songArrayPart.name;
+  o.type = songArrayPart.type;
   o.lyrics = songArrayPart.lyrics;
   o.codedChords = copyChordsOfImportedPart(songArrayPart.codedChords);
 

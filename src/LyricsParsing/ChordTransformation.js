@@ -54,11 +54,13 @@ const getSongWithTransformedChords = (separatedAndProcessedSongArray) => {
   const parts = Utils.deepCopy(separatedAndProcessedSongArray);
 
   for (let i = 0; i < parts.length; i++) {
-    const tc = [];
-    tc.singleChords = getSingleChords(parts[i].chords);
-    tc.chordPositions = searchChordPositionsOfPartArray(parts[i].chords, tc.singleChords);
-    tc.codedChords = transformChordsIntoCoding(tc.singleChords, tc.chordPositions);
-    parts[i].transformedChords = tc;
+    if (parts[i].type !== "lyrics") {
+      const tc = [];
+      tc.singleChords = getSingleChords(parts[i].chords);
+      tc.chordPositions = searchChordPositionsOfPartArray(parts[i].chords, tc.singleChords);
+      tc.codedChords = transformChordsIntoCoding(tc.singleChords, tc.chordPositions);
+      parts[i].transformedChords = tc;
+    }
   }
 
   return parts;

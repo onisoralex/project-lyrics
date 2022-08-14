@@ -95,7 +95,7 @@ const checkIfPartHasChordsOrLyrics = (part) => {
 
 const getTypeOfPart = (part) => {
   const v = checkIfPartHasChordsOrLyrics(part);
-  let type = "Part has no type!? How!!??";
+  let type = "faulty";
 
   if (v.c && v.l) type = "combined";
   if (v.c && !v.l) type = "chords";
@@ -112,26 +112,30 @@ const separateLyricsFromChords = (_parts) => {
     const part = parts[i];
     newpart.name = Utils.deepCopy(part.name);
 
-    const typeOfPart = getTypeOfPart(part);
+    newpart.type = getTypeOfPart(part);
 
-    if (typeOfPart === "chords") { // Check if parts are of name X
+    if (newpart.type === "chords") {
       newpart.chords = part.filter((e) => Utils.deepCopy(e));
       newpart.lyrics = undefined;
     }
-    if (typeOfPart === "lyrics") { // Check if parts are of name X
+    if (newpart.type === "lyrics") {
       newpart.chords = undefined;
       newpart.lyrics = part.filter((e) => Utils.deepCopy(e));
     }
-    if (typeOfPart === "combined") {
+    if (newpart.type === "combined") {
       newpart.chords = [];
       newpart.lyrics = [];
       for (let j = 0; j < part.length; j++) {
-        if (j % 2 === 0) { // Check if index is even
+        if (j % 2 === 0) {
           newpart.chords.push(Utils.deepCopy(part[j]));
         } else {
           newpart.lyrics.push(Utils.deepCopy(part[j]));
         }
       }
+    }
+    if (newpart.type === "faulty") {
+      newpart.chords = undefined;
+      newpart.lyrics = undefined;
     }
 
     parts[i] = newpart;

@@ -50,6 +50,10 @@ const isInArray = (needle, haystack) => haystack.some((e) => e === needle); // C
 
 const splitLineIntoArray = (line) => line.split(" ").filter((e) => e);
 
+const removeTrailingSpaces = (text) => `${text.trimEnd()}`;
+
+const removeLeadingSpaces = (text) => `${text.trimStart()}`;
+
 export {
   deepCopy,
   isIterateable,
@@ -62,4 +66,6 @@ export {
   getIndexInArrayStartingFrom,
   isInArray,
   splitLineIntoArray,
+  removeTrailingSpaces,
+  removeLeadingSpaces,
 };
