@@ -60,12 +60,13 @@ const getSongPartFromImportedText = (songArrayPart) => {
 
 const getSongFromParsedText = (songArray) => {
   const o = {};
+  o.title = songArray.title;
   o.artist = songArray.artist;
   o.defaultKey = songArray.defaultKey;
   o.key = songArray.key;
   o.defaultStructure = songArray.defaultStructure;
   o.tempo = songArray.tempo;
-  o.title = songArray.title;
+  o.intro = songArray.intro;
 
   // const iterator = (songArray.songParts) ? songArray.songParts.length : songArray.length;
   if (songArray.songParts) {

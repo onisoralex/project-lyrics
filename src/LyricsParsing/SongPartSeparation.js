@@ -51,13 +51,14 @@ const extractParts = (completeSongLineByLineArray, startingPositionsOfParts) => 
   let parts = [];
 
   parts = splitCompleteSongIntoParts(completeSongLineByLineArray, startingPositionsOfParts);
-  const basicSongInformationPart = completeSongLineByLineArray.slice(0, startingPositionsOfParts[0]);
+  const basicSongInformationPartAtBeginningOfFile = completeSongLineByLineArray.slice(0, startingPositionsOfParts[0]);
 
-  parts.title = Base.getBasicInfo(["title", "name", "nume", "titlu"], "Unknown Song Title", basicSongInformationPart);
-  parts.artist = Base.getBasicInfo(["artist", "interpret"], "Unknown Artist", basicSongInformationPart);
-  parts.defaultKey = Base.getBasicInfo(["key", "gama", "gamă"], "Unknown Key", basicSongInformationPart);
-  parts.tempo = Base.getBasicInfo(["tempo", "speed", "geschw.", "geschw", "geschwindigkeit"], "Unknown Tempo", basicSongInformationPart);
+  parts.title = Base.getBasicInfo(["title", "name", "nume", "titlu"], "Unknown Song Title", basicSongInformationPartAtBeginningOfFile);
+  parts.artist = Base.getBasicInfo(["artist", "interpret"], "Unknown Artist", basicSongInformationPartAtBeginningOfFile);
+  parts.defaultKey = Base.getBasicInfo(["key", "gama", "gamă"], "Unknown Key", basicSongInformationPartAtBeginningOfFile);
+  parts.tempo = Base.getBasicInfo(["tempo", "speed", "geschw.", "geschw", "geschwindigkeit"], "Unknown Tempo", basicSongInformationPartAtBeginningOfFile);
   parts.defaultStructure = Base.getBasicInfo(["structure", "struktur", "structura", "structură"], "No structure given", parts[parts.length - 1]);
+  parts.intro = Base.getBasicInfo(["intro"], "No intro found", basicSongInformationPartAtBeginningOfFile);
 
   parts = removeInfoPartFromPartsArray(parts);
 

@@ -11,6 +11,7 @@ class Song {
     this.tempo = song.tempo;
     this.title = song.title;
     this.songParts = song.songParts;
+    this.intro = song.intro;
   }
 
   transpose(ammount) {
