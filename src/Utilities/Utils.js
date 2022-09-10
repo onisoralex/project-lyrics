@@ -25,7 +25,7 @@ const openAndDisplayFile = (eventNode, fileTarget) => {
   const targetNode = fileTarget;
 
   fileReader.onload = () => {
-    targetNode.innerText = fileReader.result; // Reads the Lyrics from the Object and display them
+    targetNode.innerHTML = "<pre>".concat(fileReader.result, "</pre>"); // Reads the Lyrics from the Object and display them
   };
 
   fileReader.readAsText(input.files[0]); // Reads first File from Array
