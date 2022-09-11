@@ -7,6 +7,12 @@
 
 
 features to be added
+- improve songpart separation
+-- get starting positions of song parts by checking for brackets
+-- split Header Info part from text
+-- split Song parts from text
+-- the rest is footer info part
+-- then proceed to extracting information from header and footer and then transforming the song parts
 - editing of songtext and chords
 -- include a texteditor that opens the song in text format and then you can save it again. saving again is like parsing from a text file.
 - advanced editing
