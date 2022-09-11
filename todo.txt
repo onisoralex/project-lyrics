@@ -1,6 +1,6 @@
-- DONE add posibility to extract text even if notes are missing
+- DONE add possibility to extract text even if notes are missing
 - DONE add possibility to display text where notes are missing
-!!! add possibility to export and import text where notes are missing
+- DONE add possibility to export and import text where notes are missing
 --> relevant for texts that have chords only on the first verse
 !!! store the chord numbers as numbes absed on the key. E.g. chord 5 in the key of C = chord E, chord 5 in the key of G# = C
 --> as a result I can easily change the key, without having to generate all the chords and save them again. Thus editing of key in DB becomes possible.

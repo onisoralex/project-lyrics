@@ -53,7 +53,9 @@ const getSongPartFromImportedText = (songArrayPart) => {
   o.name = songArrayPart.name;
   o.type = songArrayPart.type;
   o.lyrics = songArrayPart.lyrics;
-  o.codedChords = copyChordsOfImportedPart(songArrayPart.codedChords);
+  if (songArrayPart.type === "chords" || songArrayPart.type === "combined") {
+    o.codedChords = copyChordsOfImportedPart(songArrayPart.codedChords);
+  }
 
   return o;
 };
