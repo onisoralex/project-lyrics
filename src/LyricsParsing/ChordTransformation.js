@@ -55,11 +55,11 @@ const getSongWithTransformedChords = (separatedAndProcessedSongArray) => {
 
   for (let i = 0; i < parts.length; i++) {
     if (parts[i].type !== "lyrics") {
-      const tc = [];
-      tc.singleChords = getSingleChords(parts[i].chords);
-      tc.chordPositions = searchChordPositionsOfPartArray(parts[i].chords, tc.singleChords);
-      tc.codedChords = transformChordsIntoCoding(tc.singleChords, tc.chordPositions);
-      parts[i].transformedChords = tc;
+      const transformedChords = [];
+      transformedChords.singleChords = getSingleChords(parts[i].chords);
+      transformedChords.chordPositions = searchChordPositionsOfPartArray(parts[i].chords, transformedChords.singleChords);
+      transformedChords.codedChords = transformChordsIntoCoding(transformedChords.singleChords, transformedChords.chordPositions);
+      parts[i].transformedChords = transformedChords;
     }
   }
 

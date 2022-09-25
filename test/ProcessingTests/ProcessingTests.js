@@ -1,5 +1,5 @@
 import * as BasicTestingFunctions from "../BasicTestingFunctions.js";
-import { SongPartSeparation } from "../../src/LyricsProcessing/SongPartSeparation.js";
+import { SongPartSeparation } from "../../src/LyricsParsing/SongPartSeparation.js";
 
 // ====================================
 // ============== Tests ===============
