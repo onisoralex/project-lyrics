@@ -9,7 +9,7 @@ const makeLine = (chordsLine, lyricsLine, readableChords, type) => {
   const space = "&nbsp;";
   const tripplespace = "&nbsp;&nbsp;&nbsp;";
   let preChord = "";
-  const postChord = readableChords ? tripplespace : space;
+  const postChord = readableChords ? tripplespace : space; // If true ensures a certain minimal distance between chords to ammke them more readable. Can cause chords words to be split, if chord changes happen too close together
 
   for (let i = 0; i < chordsLine.length; i++) {
     const a = chordsLine[i].getChordAsText();

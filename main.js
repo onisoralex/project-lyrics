@@ -25,7 +25,7 @@ window.start = () => {};
 
 window.addSong = async (event) => {
   const ouputNode = document.getElementById("song-text__output"); // Gets the Place where the Lyrics should go in the HTML
-  const readableChords = false;
+  const readableChords = false; // If true ensures a certain minimal distance between chords to ammke them more readable. Can cause chords words to be split, if chord changes happen too close together
   const songText = await FileLoader.getFileText(event);
   const song = parseSongFromText(songText);
   window.songCollection.push(song);
