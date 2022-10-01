@@ -33,17 +33,16 @@ class Chord {
       this.minMaj = (typeof _note === "number") ? _minMaj : Chord.majorOrMinor(_note, _minMaj); // duh...
       this.extraNoteNumber = _extraNoteNumber; // The 7 in a G7
       this.special = _special; // The "sus" in Gsus, "sus2" in a Gsus2, "sus4" in Gsus4, "dim" in Gdim or "dim7" in Gdim7
-      this.slashNoteNumber = () => {
+      this.slashNoteNumber = (() => {
         // The F# in a D/F#
         if (typeof _slashNote === "number") {
           return _slashNote;
         }
-
         if (_slashNote === "") {
           return NaN;
         }
         return Chord.noteToNumber(_slashNote.toUpperCase());
-      };
+      })();
     }
   }
 
@@ -120,7 +119,7 @@ class Chord {
   // Special Getters/Setters
   getChordAsText() {
     const extraNoteNumber = this.extraNoteNumber === 0 ? "" : this.extraNoteNumber;
-    const slashNoteNumberString = ((this.slashNoteNumber === 0) ? "" : "/") + NOTES[this.slashNoteNumber];
+    const slashNoteNumberString = ((Number.isNaN(this.slashNoteNumber)) ? "" : "/") + NOTES[this.slashNoteNumber];
     return `${NOTES[this.noteNumber]}${this.minMaj}${extraNoteNumber}${this.special}${slashNoteNumberString}`;
   }
 }
