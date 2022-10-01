@@ -1,6 +1,7 @@
 import * as BasicInfoTests from "./BasicInfoTests/BasicInfoTests.js";
 import * as ProcessingTests from "./ProcessingTests/ProcessingTests.js";
 import Chord from "../src/DataClasses/Chord.js";
+import * as ChordTests from "./ChordTests.js";
 
 window.init = () => {
   window.result = "";
@@ -35,23 +36,7 @@ window.execTests = (res) => {
   result += "<hr>";
 
   // Chord Object Test
-  const a = [];
-  a.push(`1: ${new Chord(5, "G", "#", "m", 7, "sus4", "D").getChordAsText() === "G#m7sus4/D"}\n`);
-  a.push(`2: ${new Chord(5, "B", "#", "m", 7, "sus2", "").getChordAsText() === "Cm7sus2"}\n`);
-  a.push(`3: ${new Chord(5, "F", "b", "m", 7, "dim", "D").getChordAsText() === "Em7dim/D"}\n`);
-  a.push(`4: ${new Chord(5, "G", "#", "", 7, "", "D").getChordAsText() === "G#7/D"}\n`);
-  a.push(`5: ${new Chord(5, "g", "#", "m", 0, "aug", "D").getChordAsText() === "G#maug/D"}\n`);
-  a.push(`6: ${new Chord(5, "g", "", "", 0, "", "").getChordAsText() === "Gm"}\n`);
-  a.push(`7: ${new Chord(5, "G#m7sus4/D").getChordAsText() === "G#m7sus4/D"}\n`);
-  a.push(`8: ${new Chord(5, "Cm7sus2").getChordAsText() === "Cm7sus2"}\n`);
-  a.push(`9: ${new Chord(5, "Em7dim/d").getChordAsText() === "Em7dim/D"}\n`);
-  a.push(`10: ${new Chord(5, "g#7/D").getChordAsText() === "G#m7/D"}\n`);
-  a.push(`11: ${new Chord(5, "G#maug/D").getChordAsText() === "G#maug/D"}\n`);
-  a.push(`12: ${new Chord(5, "Gm").getChordAsText() === "Gm"}\n`);
-  a.push(`13: ${new Chord(5, "G#m7sus4/D").transpose(5).getChordAsText() === "C#m7sus4/G"}\n`);
-  a.push(`14: ${new Chord(5, "G#m7sus4/D").transpose(-4).getChordAsText() === "Em7sus4/Bb"}\n`);
-  a.push(`15: ${new Chord(5, "G#m7sus4/D").transpose(12).getChordAsText() === "G#m7sus4/D"}\n`);
-  result += a;
+  result += ChordTests.test();
 
   window.result = result;
 };
