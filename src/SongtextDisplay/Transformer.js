@@ -91,8 +91,9 @@ const makeText = (parts, readableChords) => {
   return text;
 };
 
-const createText = (song, readableChords) => {
+const createText = (_song, readableChords) => {
   let display = "";
+  const song = _song.normalizeChordsForDisplaying();
 
   display += `<div id="js-song__title"><h2>${song.getTitle()}</h2></div>`;
   display += `<div id="js-song__artist"><strong>Artist:</strong> ${song.getArtist()}</div>`;
