@@ -1,6 +1,5 @@
 import * as BasicInfoTests from "./BasicInfoTests/BasicInfoTests.js";
 import * as ProcessingTests from "./ProcessingTests/ProcessingTests.js";
-import Chord from "../src/DataClasses/Chord.js";
 import * as ChordTests from "./ChordTests.js";
 
 window.init = () => {
@@ -36,7 +35,7 @@ window.execTests = (res) => {
   result += "<hr>";
 
   // Chord Object Test
-  result += ChordTests.test();
+  result += ChordTests.doTests();
 
   window.result = result;
 };
