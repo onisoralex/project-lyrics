@@ -24,6 +24,7 @@ const NUMBERS = {
 Object.freeze(NUMBERS);
 
 const NOTES = {
+  NaN: "",
   1: "C",
   2: "C#",
   3: "D",
