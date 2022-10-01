@@ -38,9 +38,10 @@ class Chord {
         if (typeof _slashNote === "number") {
           return _slashNote;
         }
-        if (_slashNote === "") {
+        if (_slashNote === "" || _slashNote === undefined || _slashNote === null) {
           return NaN;
         }
+
         return Chord.noteToNumber(_slashNote.toUpperCase());
       })();
     }
