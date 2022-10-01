@@ -46,4 +46,4 @@ Bb F Bb
 
 
 [info]
-Struktur:
+Struktur: strophe, ref, br,ref
