@@ -1,0 +1,49 @@
+Title: Prunc divin
+Key: B#
+Intro: Toate Instrumente
+
+[Intro]
+Dm Em Am Dm F A# F C
+
+[Vers 1]
+    C      E7         Am    F
+O prunc divin slava Tu ai parasit
+    C                     G
+Si smerit intr-o iesle-ai fost gasit
+C      E7          AmS     F
+O de la Rasarit magii-n graba au venit
+    C            G     C
+Sa se-nchine Regelui de mult vestit
+
+[chorus]
+    E7
+Ai venit pe pamant
+    Am     F
+Lumea-ntreaga schimband
+     C                 D7  G
+Si la toti ne-ai daruit viata-n dar
+C   E7                 F
+O ce copil noua astazi ni s-a dat
+    C       G       C    E7   F    C   G   C
+Sa-I cantam sa-L slavim neincetat
+Bb F Bb
+testtesttesttetstetsttetsttest
+
+[Vers 2]
+In Betleem intr-un sat neinsemnat
+S-a nascut cel mai mare Imparat
+O slava din Inalt, cor de ingeri au cantat
+Cand Isus in miez de noapte s-a intrupat
+
+[Vers 3]
+    E7
+    Am     F
+     C                 D7  G
+C   E7                 F
+    C       G       C    E7   F    C   G   C
+Bb F Bb
+
+
+
+[info]
+Struktur:
