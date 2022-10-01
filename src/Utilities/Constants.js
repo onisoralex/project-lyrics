@@ -24,7 +24,6 @@ const NUMBERS = {
 Object.freeze(NUMBERS);
 
 const NOTES = {
-  0: "",
   1: "C",
   2: "C#",
   3: "D",

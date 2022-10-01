@@ -14,23 +14,33 @@ class Song {
     this.intro = song.intro;
   }
 
-  transpose(ammount) {
+  transposeChords(ammount) {
     // Can be simplified a bit, but is currently necessary to be done like this, because deepCopy of the whole song doesn't copy Chord objects
     const newSong = new Song(Utils.deepCopy(this));
 
     for (let i = 0; i < this.songParts.length; i++) {
-      const originalSongPart = this.songParts[i];
-      const newSongPart = newSong.songParts[i];
-      for (let j = 0; j < originalSongPart.codedChords.length; j++) {
-        const originalChordsLine = originalSongPart.codedChords[j];
-        const newChordsLine = newSongPart.codedChords[j];
-        for (let k = 0; k < originalChordsLine.length; k++) {
-          const originalChord = originalChordsLine[k];
-          const newChord = new Chord(originalChord.position, originalChord.getChordAsText()).transpose(ammount);
-          newChordsLine[k] = newChord;
+      if (this.songParts[i].type === "lyrics") {
+        // If there are no chords no transpose needed
+      } else {
+        const originalSongPart = this.songParts[i];
+        const newSongPart = newSong.songParts[i];
+        for (let j = 0; j < originalSongPart.codedChords.length; j++) {
+          const originalChordsLine = originalSongPart.codedChords[j];
+          const newChordsLine = newSongPart.codedChords[j];
+          for (let k = 0; k < originalChordsLine.length; k++) {
+            const originalChord = originalChordsLine[k];
+            const newChord = new Chord(originalChord.position, originalChord.getChordAsText()).transpose(ammount);
+            newChordsLine[k] = newChord;
+          }
         }
       }
     }
+
+    return newSong;
+  }
+
+  transpose(ammount) {
+    const newSong = this.transposeChords(ammount);
 
     const key = newSong.getKey();
     const keynumber = NUMBERS[key];
@@ -38,6 +48,18 @@ class Song {
     newSong.setKey(NOTES[newkeynumber]);
 
     return newSong;
+  }
+
+  // Normalizes a song to have all chords as if the key is in C. Thus the chord numbers are based on the actual song key (1 in the key of A is A, 3 in the key of A = B); Used for storage to store all songs in C
+  normalizeChordsForSaving() {
+    const ammountToTranspose = (NUMBERS[this.defaultKey] - 1) * -1;
+    return this.transposeChords(ammountToTranspose);
+  }
+
+  // Normalizes a stored song to be displayed in the correct key
+  normalizeChordsForDisplaying() {
+    const ammountToTranspose = NUMBERS[this.defaultKey] - 1;
+    return this.transposeChords(ammountToTranspose);
   }
 
   // Getters/Setters

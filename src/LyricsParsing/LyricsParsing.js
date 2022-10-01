@@ -26,7 +26,7 @@ const parseSongFromText = (completeSongText) => {
   const songLinesArray = convertTextToArray(completeSongText);
   const songDividedInDifferentParts = searchAndGetLyricsPartsAndChordLines(songLinesArray); // Gets the different Parts of a Song
   const songWithTransformedChordsAsArray = getSongWithTransformedChords(songDividedInDifferentParts);
-  const song = new Song(getSongFromParsedText(songWithTransformedChordsAsArray));
+  const song = new Song(getSongFromParsedText(songWithTransformedChordsAsArray)).normalizeChordsForSaving();
 
   return song;
 };
