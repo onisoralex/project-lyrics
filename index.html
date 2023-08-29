@@ -2,48 +2,53 @@
 
 <head>
 	<title>Lyrics</title>
+	<!-- Font Awesome -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+	<!-- MDB -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.css" rel="stylesheet" />
+	<!-- MDB -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.js"></script>
 	<script type="module" src="./main.js"></script>
 	<link rel="stylesheet" href="style.css">
 </head>
 
-<body onload="window.start()">
-	<hr>
-	<input type="checkbox" id="song-text-readability-setting" onchange="">Make Text more readable (not working yet)
-	<hr>
-	<div class="flex-row">
-		<label class="button flexing">
-			Display File
-			<input type="file" accept="text/plain" class="hidden-element"
-				onchange="window.openAndDisplayFile(event, document.getElementById('song-text__output'))">
-		</label>
-		<label class="button flexing">
-			Add Song from File
-			<input type="file" accept="text/plain" class="hidden-element" onchange="window.addSong(event)">
-		</label>
-	</div>
-	<hr>
-	<label class="button flexing">
-		Import File
-		<input type="file" accept="text/plain" class="hidden-element" onchange="window.import(event)">
-	</label>
-	<div class="flex-row">
-		<label class="button flexing">
-			Create Export File
-			<input type="button" class="hidden-element" onclick="window.export()">
-		</label>
-		<a href="" id="download-link" class="button flexing hidden-element">
-			Download&nbsp;
-			<svg class="arrow-svg" viewBox="0 0 512 512">
-				<path d="M256 0C114.6 0 0 114.6 0 256c0 141.4 114.6 256 256 256s256-114.6 
-					256-256C512 114.6 397.4 0 256 0zM382.6 302.6l-103.1 103.1C270.7 414.6 260.9 
-					416 256 416c-4.881 0-14.65-1.391-22.65-9.398L129.4 302.6c-12.5-12.5-12.5-32.75 
-					0-45.25s32.75-12.5 45.25 0L224 306.8V128c0-17.69 14.33-32 32-32s32 14.31 32 
-					32v178.8l49.38-49.38c12.5-12.5 32.75-12.5 45.25 0S395.1 290.1 382.6 302.6z" />
-			</svg>
-		</a>
-	</div>
-	<hr>
-	<div id="song-text__output"></div>
+<body class="mdb-skin-dark" onload="window.start()">
+	<main class="pt-5  mdb-docs-layout">
+		<div class="container mt-5 px-lg-5">
+			<hr>
+			<input type="checkbox" id="song-text-readability-setting" onchange="">Make Text more readable (not working yet)
+			<hr>
+			<div class="flex-row">
+				<label class="button flexing btn btn-primary ripple-surface">
+					Display File
+					<input type="file" accept="text/plain" class="hidden-element"
+						onchange="window.openAndDisplayFile(event, document.getElementById('song-text__output'))">
+				</label>
+				<label class="button flexing btn btn-primary ripple-surface">
+					Add Song from File
+					<input type="file" accept="text/plain" class="hidden-element" onchange="window.addSong(event)">
+				</label>
+			</div>
+			<hr>
+			<label class="button flexing btn btn-primary ripple-surface">
+				Import File
+				<input type="file" accept="text/plain" class="hidden-element" onchange="window.import(event)">
+			</label>
+			<div class="flex-row">
+				<label class="button flexing btn btn-primary ripple-surface">
+					Create Export File
+					<input type="button" class="hidden-element" onclick="window.export()">
+				</label>
+				<a href="" id="download-link" class="button flexing hidden-element btn btn-lg btn-link ripple-surface ripple-surface-dark" data-mdb-ripple-color="dark">
+					<i class="fa fa-download"></i>
+				</a>
+			</div>
+			<hr>
+			<div id="song-text__output"></div>
+		</div>
+	</main>
 </body>
 
 </html>

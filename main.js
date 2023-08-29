@@ -9,6 +9,17 @@ window.openAndDisplayFile = Utils.openAndDisplayFile;
 window.parseSongFromText = parseSongFromText;
 window.songCollection = [];
 
+/*
+window.download() {
+  const a = document.createElement('a')
+  a.href = url
+  a.download = url.split('/').pop()
+  document.body.appendChild(a)
+  a.click()
+  document.body.removeChild(a)
+}
+*/
+
 window.export = () => {
   const downloadLinkID = "download-link";
   Export.exportToDBFile(window.songCollection, downloadLinkID);
