@@ -1,9 +1,15 @@
 import { createFileDownloadLink } from "../Utilities/Utils.js";
 
-const exportToDBFile = (obj, elementID) => {
-  const element = document.getElementById(elementID);
+const exportToDBFile = (obj) => {
   const filename = "export.JSON";
-  createFileDownloadLink(obj, filename, element);
+  const url = createFileDownloadLink(obj);
+
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
 };
 
 export { exportToDBFile };

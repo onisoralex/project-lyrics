@@ -19,6 +19,7 @@
 }
 */
 
+/*
 .flex-row {
   display: flex;
   flex-direction: row
@@ -31,12 +32,10 @@
   width: fit-content;
 }
 
+*/
 /*
   Hide the actual buttons to let the labels become the buttons
 */
-.hidden-element {
-  display: none;
-}
 
 .arrow-svg {
   width: 1em;

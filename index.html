@@ -23,27 +23,24 @@
 			<div class="flex-row">
 				<label class="button flexing btn btn-primary ripple-surface">
 					Display File
-					<input type="file" accept="text/plain" class="hidden-element"
+					<input type="file" accept="text/plain" class="d-none"
 						onchange="window.openAndDisplayFile(event, document.getElementById('song-text__output'))">
 				</label>
 				<label class="button flexing btn btn-primary ripple-surface">
 					Add Song from File
-					<input type="file" accept="text/plain" class="hidden-element" onchange="window.addSong(event)">
+					<input type="file" accept="text/plain" class="d-none" onchange="window.addSong(event)">
 				</label>
 			</div>
 			<hr>
-			<label class="button flexing btn btn-primary ripple-surface">
-				Import File
-				<input type="file" accept="text/plain" class="hidden-element" onchange="window.import(event)">
-			</label>
 			<div class="flex-row">
-				<label class="button flexing btn btn-primary ripple-surface">
-					Create Export File
-					<input type="button" class="hidden-element" onclick="window.export()">
+				<label class="button btn btn-primary ripple-surface">
+					Import File
+					<input type="file" accept="text/plain" class="d-none" onchange="window.import(event)">
 				</label>
-				<a href="" id="download-link" class="button flexing hidden-element btn btn-lg btn-link ripple-surface ripple-surface-dark" data-mdb-ripple-color="dark">
-					<i class="fa fa-download"></i>
-				</a>
+				<button class="button btn btn-primary ripple-surface" onclick="window.exportDownload()">
+					<i class="fa fa-download me-md-2 pe-none"></i>
+					<span class="d-md-inline-block">Create Export File</span>
+				</button>
 			</div>
 			<hr>
 			<div id="song-text__output"></div>

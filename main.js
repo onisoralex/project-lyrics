@@ -9,21 +9,8 @@ window.openAndDisplayFile = Utils.openAndDisplayFile;
 window.parseSongFromText = parseSongFromText;
 window.songCollection = [];
 
-/*
-window.download() {
-  const a = document.createElement('a')
-  a.href = url
-  a.download = url.split('/').pop()
-  document.body.appendChild(a)
-  a.click()
-  document.body.removeChild(a)
-}
-*/
-
-window.export = () => {
-  const downloadLinkID = "download-link";
-  Export.exportToDBFile(window.songCollection, downloadLinkID);
-  Utils.showElement(downloadLinkID);
+window.exportDownload = () => {
+  Export.exportToDBFile(window.songCollection);
 };
 
 // Import has to be done in 2 steps because of how async/await works (await automatically returns the Promise object, making it impossible to return the necessary Object later)

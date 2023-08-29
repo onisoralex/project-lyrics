@@ -30,19 +30,17 @@ const openAndDisplayFile = (eventNode, fileTarget) => {
 
   fileReader.readAsText(input.files[0]); // Reads first File from Array
 };
-const createFileDownloadLink = (obj, filename, element) => {
+const createFileDownloadLink = (obj) => {
   const mimeType = "text/plain";
-  const downloadlinkElement = element;
   const content = JSON.stringify(obj);
   const theFile = new Blob([content], { type: mimeType });
 
-  downloadlinkElement.href = URL.createObjectURL(theFile);
-  downloadlinkElement.download = filename;
+  return URL.createObjectURL(theFile);
 };
 
-const showElement = (elementID) => document.getElementById(elementID).classList.remove("hidden-element");
+const showElement = (element) => element.classList.remove("d-none");
 
-const hideElement = (elementID) => document.getElementById(elementID).classList.add("hidden-element");
+const hideElement = (elementID) => document.getElementById(elementID).classList.add("d-none");
 
 const getIndexInArrayStartingFrom = (needle, haystack, n) => haystack.indexOf(needle, n);
 
