@@ -1,6 +1,6 @@
 import { createFileDownloadLink } from "../Utilities/Utils.js";
 
-const exportToDBFile = (obj) => {
+const exportToFile = (obj) => {
   const filename = "export.JSON";
   const url = createFileDownloadLink(obj);
 
@@ -12,4 +12,4 @@ const exportToDBFile = (obj) => {
   document.body.removeChild(a);
 };
 
-export { exportToDBFile };
+export { exportToFile };

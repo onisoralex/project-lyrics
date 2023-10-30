@@ -3,13 +3,13 @@ import * as Utils from "../Utilities/Utils.js";
 // Replace the space (and eventual multiple trailing spaces) with a nonbreaking space
 // It's the only solution to create fixed spaces. Will cause nonbreaking points in text.
 // Could eventually be fixed with usage of CSS Grid-View
-const makeLine = (chordsLine, lyricsLine, readableChords, type) => {
+const makeLine = (chordsLine, lyricsLine, betterReadableChords, type) => {
   let text = "";
 
   const space = "&nbsp;";
   const tripplespace = "&nbsp;&nbsp;&nbsp;";
   let preChord = "";
-  const postChord = readableChords ? tripplespace : space; // If true ensures a certain minimal distance between chords to ammke them more readable. Can cause chords words to be split, if chord changes happen too close together
+  const postChord = betterReadableChords ? tripplespace : space; // If true ensures a certain minimal extra distance between chords to make them more readable. Can cause words to be split, if chord changes happen too close together, eve though normally splitting of words wouldnn't be necessary.
 
   for (let i = 0; i < chordsLine.length; i++) {
     const a = chordsLine[i].getChordAsText();
@@ -61,7 +61,7 @@ const makeTextLine = (lyricsLine) => {
   return text;
 };
 
-const makeText = (parts, readableChords) => {
+const makeText = (parts, betterReadableChords) => {
   let text = "";
   for (let i = 0; i < parts.length; i++) {
     const part = parts[i];
@@ -82,7 +82,7 @@ const makeText = (parts, readableChords) => {
         // Else it will be interpreted as chords at the end of a sentence that have no text
         // -- What did I mean by this? Have to read the code again to nderstand and document better
         const lyricsLine = (lyrics === undefined) ? undefined : lyrics[j];
-        text += makeLine(chordsLine, lyricsLine, readableChords, part.type);
+        text += makeLine(chordsLine, lyricsLine, betterReadableChords, part.type);
       }
     }
     text += `</div>`;
@@ -91,7 +91,7 @@ const makeText = (parts, readableChords) => {
   return text;
 };
 
-const createText = (_song, readableChords) => {
+const createText = (_song, betterReadableChords) => {
   let display = "";
   const song = _song.normalizeChordsForDisplaying();
 
@@ -101,7 +101,7 @@ const createText = (_song, readableChords) => {
   display += `<div id="js-song__currentKey"><strong>Current Key:</strong> ${song.getKey()}</div>`;
   display += `<div id="js-song__tempo"><strong>Tempo:</strong> ${song.getTempo()}</div>`;
   display += `<div id="js-song__defaultStructure"><strong>Default Structure:</strong> ${song.getDefaultStructure()}</div>`;
-  display += `<div id="js-song__text"><br>${makeText(song.songParts, readableChords)}<br></div>`;
+  display += `<div id="js-song__text"><br>${makeText(song.songParts, betterReadableChords)}<br></div>`;
 
   return display;
 };

@@ -15,7 +15,7 @@
 </head>
 
 <body class="mdb-skin-dark" onload="window.start()">
-	<main class="pt-5  mdb-docs-layout">
+	<main class="pt-5 mdb-docs-layout">
 		<div class="container mt-5 px-lg-5">
 			<div class="form-check">
 				<input type="checkbox" id="song-text-readability-setting" class="form-check-input" onchange="">
@@ -39,10 +39,10 @@
 					Import File
 					<input type="file" accept="text/plain" class="d-none" onchange="window.import(event)">
 				</label>
-				<button class="button btn btn-primary ripple-surface" onclick="window.exportDownload()">
+				<label class="button btn btn-primary ripple-surface" onclick="window.exportDownload(window.songCollection);">
 					<i class="fa fa-download me-md-2 pe-none"></i>
 					<span class="d-md-inline-block">Create Export File</span>
-				</button>
+				</label>
 			</div>
 			<hr>
 			<div id="song-text__output"></div>
